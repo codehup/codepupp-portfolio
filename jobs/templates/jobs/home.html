@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load staticfiles %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +24,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Pythonist</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Pythonist</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,13 +32,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Twitter <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="https://twitter.com/Ihackthings">Twitter <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="{% url 'allposts' %}">Blog</a>
           </li>
         </ul>
         <!-- Search Box -->
@@ -56,8 +57,9 @@
         <h1 class="jumbotron-heading">Hi I am Himanshu - and I love to code!1 </h1>
         <p class="lead text-muted"> I am a Python and Ruby On Rails Developer based out in India...</p>
         <p>
-          <a href="mailto:codepupp@gmail.com" class="btn btn-primary my-2">Email Me!</a>
+          <a href="mailto:codepupp@gmail.com" class="btn btn-primary my-2">Email Me!</a><br>
           <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+          <img src="{% static 'pupper.jpg' %}" alt="" class= img-thumbnail style="height:200">
         </p>
       </div>
     </section>

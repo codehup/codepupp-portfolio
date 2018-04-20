@@ -81,6 +81,7 @@ DATABASES = {
         'NAME': 'portfoliodb',
         'USER': 'postgres',
         'PASSWORD': 'pasword',
+        # ApplePie@2018
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -122,6 +123,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static/')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 

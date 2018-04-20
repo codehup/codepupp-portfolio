@@ -9,3 +9,13 @@ class Blog(models.Model):
     meta = models.CharField(max_length=200)
     category = models.CharField(max_length=200)
     body= models.TextField()
+
+    # def summary(self):
+    #     return self.body[:100]
+    def __str__(self):
+        return self.title
+    # def __str__(self):
+    #     return self.pub_date
+
+    def pub_date_hooman(self):
+        return self.pub_date.strftime('%b %e %Y')
