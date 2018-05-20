@@ -19,3 +19,6 @@ class Blog(models.Model):
 
     def pub_date_hooman(self):
         return self.pub_date.strftime('%b %e %Y')
+
+    # def show_latest_post
+    #     latest_post = Blog.pub_date

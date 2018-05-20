@@ -1,111 +1,701 @@
 <!doctype html>
 <html lang="en">
 {% load staticfiles %}
+
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../../../favicon.ico">
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Hola</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Album example for Bootstrap</title>
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %} ">
 
-  <!-- Custom styles for this template -->
-  <!-- Fontawesome!!!  -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- script
+    ================================================== -->
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script src="{% static 'js/pace.min.js' %}"></script>
 
-  <link href="album.css" rel="stylesheet">
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
+<body id="top">
 
-<body>
+   <!-- header
+    ================================================== -->
+    <header class="s-header">
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'home' %}">Pythonist</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <div class="header-logo">
+            <a class="site-logo" href="/"><img src=" {% static 'images/logo.svg' %}" alt="Homepage"></a>
+        </div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/Ihackthings">Twitter <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'allposts' %}">Blog</a>
-          </li>
-        </ul>
-        <!-- Search Box -->
-        <!-- <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
-      </div>
-    </nav>
-  </header>
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
+                <li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>
+                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+            </ul>
+        </nav>
 
-  <main role="main">
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Hi I am Himanshu - and I love to code!1 </h1>
-        <p class="lead text-muted"> I am a Python and Ruby On Rails Developer based out in India...</p>
-        <p>
-          <a href="mailto:codepupp@gmail.com" class="btn btn-primary my-2">Email Me!</a><br>
-          <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
-          <img src="{% static 'pupper.jpg' %}" alt="" class= img-thumbnail style="height:200">
-        </p>
-      </div>
+    </header> <!-- end s-header -->
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="{% static 'images/hero-bg.jpg'%}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <h3>Hello There</h3>
+
+                <h1>
+                    I am Himanshu Patel :). <br>
+                    A Software Engineer & Web Developer <br>
+                    based in India.
+                </h1>
+
+                <div class="home-content__buttons">
+                    <a href="#works" class="smoothscroll btn btn--stroke">
+                        Latest Projects
+                    </a>
+                    <a href="#about" class="smoothscroll btn btn--stroke">
+                        More About Me
+                    </a>
+                </div>
+
+                <div class="home-content__scroll">
+                    <a href="#about" class="scroll-link smoothscroll">
+                        <span>Scroll Down</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div> <!-- end home-content -->
+
+        <ul class="home-social">
+            <li>
+                <a href="https://www.facebook.com/djangoengineer"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+            </li>
+            <li>
+                <a href="https://twitter.com/Ihackthings"><i class="im im-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/alexandrv2/"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/himanshu-patel-8a21959/"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+            </li>
+            <li>
+                <a href="https://www.github.com/thdesignable/"><i class="im im-github" aria-hidden="true"></i><span>Github</span></a>
+            </li>
+        </ul> 
+        <!-- end home-social -->
+
+    </section> <!-- end s-
+
+  <!-- about
+    ================================================== -->
+    <section id="about" class="s-about target-section">
+        
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full text-center">
+                <h3>About</h3>
+                <h1>More About Me</h1>
+                <p class="lead">I am a Webdeveloper and Software Engineer and A husband<i class="im im-heart"></i>. I make beautiful apps and awesome websites and useful software with a number of awesome technologies out there. I turn <i class="im im-coffee"></i> into <i class="im im-code"></i></p>
+                <p>I love to code, I am an avid gamer, tech enthusisast and  Open-source advocate. When I am not writing code, you will find me reading a book or typing 180 chars on twitter. Check out my blog further and follow me on my social networks <a href="#top">here</a></p>
+
+                <p>I have started this idea to just have a place where I can have my learning somewhere I can refer to anywhere(hard to find them in notes :D). </p>
+            </div>
+        </div>
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>Howdy!</h3>
+
+                <p>Thanks for visting!!</p>
+
+                <p>
+                Here are some of the technologies and things I've worked with in past decade(close to) of my life. If you would like me to work with you on your awesome idea.. Yeah! <a href="#contact">let's do it!</a>
+                </p>
+            </div>
+
+            <div class="col-six tab-full right">
+                <h3>I've Got Some skillz.</h3>
+
+                <ul class="skill-bars">
+                    <li>
+                    <div class="progress percent90"><span>90%</span></div>
+                    <strong>HTML5</strong>
+                    </li>
+                    <li>
+                    <div class="progress percent85"><span>85%</span></div>
+                    <strong>CSS3</strong>
+                    </li>
+                    <li>
+                    <div class="progress percent95"><span>95%</span></div>
+                    <strong>Django</strong>
+                    </li>   
+                    <li>
+                    <div class="progress percent90"><span>80%</span></div>
+                    <strong>Ruby On Rails</strong>
+                    </li>   
+                    <li>
+                    <div class="progress percent50"><span>50%</span></div>
+                    <strong>JQuery</strong>
+                    </li>
+                    <li>
+                    <div class="progress percent85"><span>85%</span></div>
+                    <strong>Laravel</strong>
+                    </li>
+                    <li>
+                    <div class="progress percent55"><span>55%</span></div>
+                    <strong>Angular</strong>
+                    </li>  
+                </ul>
+            </div>
+
+        </div> <!-- end about-content -->
+        <div class="row about-content about-content--buttons">
+
+            <div class="col-six tab-full left">
+                <a href="{% static 'resume.pdf' %}" target="_blank" " class="btn btn--primary full-width">Download My CV</a>
+            </div>
+            <div class="col-six tab-full right">
+                <a href="#contact" class="btn full-width">Hire Me Now</a>
+            </div>
+
+        </div> <!-- end about-content buttons -->
+
+<!-- CV snippets -->
+    <div class="row about-content about-content--timeline">
+
+            <div class="col-full text-center">
+                <h3>My Work Experience.</h3>
+            </div>
+
+            <div class="col-six tab-full left">
+              <div class="worksub">Development Experience </div>
+                <div class="timeline">
+                  <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">January 2017 - Present</p>
+                            <h3>Rubyist LLC</h3>
+                            <h5>Senior Development Engineer</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <li>Developing Main Applicaiton on Ruby On Rails</li>
+                            <li>Primarily working on API, TDD, BDD </li>
+                            <li>Developing in house solution based on ruby on rails</li>
+                            <li>Maintainer of applications based on Python, Django and ruby on rails.</li>
+
+
+                        </div>
+                    </div> <!-- end timeline__block -->
+                    <br>
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">April 2012 – May 2015</p>
+                            <h3>CodeKrieg LLC - Italia</h3>
+                            <h5>Lead RubyOnRails Developer</h5>
+                        </div>
+                        <div class="timeline__desc">  
+                            <li>Develop applications for a startup like helpdesk Ticketing system, Live Chat support, Main Website Application.</li>
+
+                             <li> Deployment of applications over Heroku, GitPages, AWS.</li>
+
+                             <li> Champion agile processes with regards to development.</li>
+
+                             <li> Application maintenance & server support.</li>
+
+                             <li> Implementing system automation and CI/CD using shell scripts, python and ruby. Repo:https://github.com/thedesignable/CodeKrieg</li>
+                        </div>
+                    </div> <!-- end timeline__block -->
+                    
+                    <br>
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">April 2015 – July 2016</p>
+                            <h3>Hitkarini Sabha</h3>
+                            <h5>Senior Web Developer</h5>
+                        </div>
+                        <div class="timeline__desc">  
+                            <li> Server deployment, environment setup & OS patching on Ubuntu, RHEL & CentOS.</li>
+
+                            <li>Web development of various websites of Hitkarini sabha and institutes associated (see references below)</li> 
+
+                            <li> UI/UX designs and implementation using vanilla JS/HTML as well as various JS frameworks </li>
+
+                            <li>In-House ERP application support.</li>
+
+                            <li> Deploying applications on in-house production server.</li>
+
+                            <li> Development with PHP (based on Symfony and Laravel frameworks).</li>
+                        </div>
+                    </div> <!-- end timeline__block -->
+                    <br>
+                     
+
+                </div> <!-- end timeline -->
+            </div> <!-- end left -->
+
+            <div class="col-six tab-full right">
+              <div class="worksub">DevOps Experience </div>   
+                <div class="timeline">
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">August 2016 – April 2017</p>
+                            <h3>UST Global</h3>
+                            <h5>Infrastructure Analyst</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <li>Handling issues related to Linux based OS. Patching, provisioning servers</li>
+                             <li> Troubleshooting issues at various levels. Providing on call and email support to the clients.</li>
+                              <li>Datacenter operation Support.</li>
+
+                              <li>Worked as SME for deployment of WAS applications, supporting git issues and providing OS level support.</li>
+                        </div>
+                    </div> <!-- end timeline__block -->  
+                  <br>
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">October 2011 – November 2012</p>
+                            <h3>Kayako Infotech</h3>
+                            <h5>Application/Product Support Engineer & Linux Admin</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <li> Troubleshooting and optimisation of Apache, IIS , PHP, MySQL.</li>
+
+                           <li> Deployment of VMware ESXi server as far of extending a testing strategy.</li>
+
+                           <li> Providing support to clients across the world over chat, tickets and phone.</li>
+
+                           <li> Application maintenance & support for proprietary product (Kayako Helpdesk) on Linux, Windows & VMware environments.</li>
+
+                           <li> Custom tools and scripting development using Python, RoR</li>
+                        </div>
+                    </div> <!-- end timeline__block -->
+                    <br>
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">January 2008 – September 2011</p>
+                            <h3>Envirotech Gensets</h3>
+                            <h5>Systems Administrator & Developer</h5>
+                        </div>
+                        <div class="timeline__desc">
+                          <li>Technical support on Linux and Windows servers, ensuring high customer satisfaction in response time and solution.</li>
+
+                          <li>Writing shell scripts to automate inhouse processes.</li>
+
+                          <li>Monitoring server alerts and resolving issues.</li>
+
+                          <li>Application developments based on PHP (intranet applications)</li>
+                        </div>
+                    </div> <!-- end timeline__block -->
+
+                </div> <!-- end timeline -->
+            </div> <!-- end right -->
+
+        </div> <!-- end about-content timeline -->
+
+    </section> <!-- end about -->
+
+    <!-- works
+    ================================================== -->
+    <section id="works" class="s-works target-section">
+
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>Portfolio</h3>
+                <h1>See My Latest Projects.</h1>
+                
+                <p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
+            </div>
+        </div>
+
+        <div class="row masonry-wrap">
+            <div class="masonry">
+              {% for job in jobs.all %}
+                <div class="masonry__brick">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="{{ job.image.url }}" class="thumb-link" title="The Beetle Car" data-size="1050x700">
+                                <img src="images/portfolio/beetle.jpg" 
+                                     srcset="images/portfolio/beetle.jpg 1x, images/portfolio/beetle@2x.jpg 2x" alt="">
+                                <span class="shadow-overlay"></span>
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                {{ job.summary }}
+                            </h3>
+                            <!-- Item Category -->
+                            <p class="item-folio__cat">
+                                Web Development
+                            </p>
+                        </div>
+      <!-- Need to add this functionality up !!  -->
+                        <!-- <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="im im-link"></i>
+                        </a> -->
+
+                        <div class="item-folio__caption">
+                            <p>{{ job.summary }}</p>
+                        </div>
+
+                    </div> <!-- end item-folio -->
+                </div> <!-- end masonry__brick -->
+            {% endfor %}
+        </div> <!-- end masonry -->
+
+    </section> <!-- end works -->
+
+
+    <!-- testimonials
+    ================================================== -->
+    <div class="s-testimonials">
+
+        <div class="overlay"></div>
+
+        <div class="row testimonials-header">
+            <div class="col-full">
+                <h1 class="h02">What People Say.</h1>
+            </div>
+        </div>
+
+        <div class="row testimonials">
+
+            <div class="col-full testimonials__slider">
+
+                <div class="testimonials__slide">
+                    <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
+                    <p>Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum. 
+                    Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori.</p>
+                    <div class="testimonials__author h06">
+                        Tim Cook
+                        <span>CEO, Apple</span>
+                    </div>
+                </div>
+
+            </div> <!-- end testimonials__slider -->
+
+        </div> <!-- end testimonials -->
+
+    </div> <!-- end s-testimonials -->
+    
+
+    <!-- blog
+    ================================================== -->
+    <section id="blog" class="s-blog target-section">
+
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>Journal</h3>
+                <h1>Latest From The Blog.</h1>
+                <p class="lead">Here is where all the spicy tutorials and videos of mine goes, Check 'em out!</p>
+            </div>
+        </div>
+
+        <div class="row blog-content">
+            <div class="col-full">
+
+                <div class="blog-list block-1-2 block-tab-full">
+                   {% for blog in blogs.all %}
+                    <article class="col-block">
+                                
+                        <div class="blog-date">
+                            <a href="blog-single.html">{{ blog.pub_date_hooman }}</a>
+                        </div>  
+                        
+                        <h2 class="h01"><a href="{% url 'detail' blog.id %}">{{ blog.title }}</a></h2>
+                        <img src="{{ blog.thumbnail.url }}" alt="" class="img-thumbnail">
+                        <p>
+                        <!-- {{ blog.summary }} -->
+                        </p>
+
+                        <div class="blog-cat">
+                                <a href="blog.html">{{ blog.meta }}</a><a href="{% url 'detail' blog.id %}">{{ blog.category }}</a>
+                        </div>
+
+                        
+                    </article>
+                 {% endfor %}
+                </div> <!-- end blog-list -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end blog-content -->
+
+    </section> <!-- end s-blog -->
+    <!-- s-cta
+    ================================================== -->
+    <section class="s-cta">
+        
+        <div class="row narrow cta">
+
+            <div class="col-full cta__content">
+
+                <h2 class="h01"><a href="http://www.skysilk.com">Pythonist Recommends SkySilk.</a></h2>
+
+                <p class="lead">
+                Looking for an awesome and reliable webhosting? Try <a href="http://www.skysilk.com/">SkySilk</a>.
+                Get <span>Free VPS</span>Its Beta!! and yeah its all SSD!.
+                </p>
+
+                <div class="cta__action">
+                    <a class="btn btn--primary btn--large" href="http://www.skysilk.com/">Sign Up Now</a>
+                </div>  
+
+            </div>
+
+        </div> <!-- end cta -->
+        
     </section>
 
-    <div class="album py-5 bg-dark">
-      <div class="container">
-        <div class="row">
-          <!-- job box -->
-          {% for job in jobs.all %}
-          <div class="col-md-4">
-            <div class="card  box-shadow" >
-              <img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">{{ job.summary }}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-          <!-- end of job box -->
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Back to top</a>
-      </p>
-      <p> All rights reserved &reg; The Pythonist &copy; {% now "Y" %}</p>
-      <p>Made with awesome Django and <i class="fa fa-heart"></i>  &amp; a lot of <i class="fa fa-coffee"></i> </a>.</p>
-      <p>Hosted on <i class="fa fa-server"> <a href="https://skysilk.com">Skysilk</a></i>  </p>
-    </div>
-  </footer>
+    <!-- s-stats
+    ================================================== -->
+    <section id="stats" class="s-stats">
+        <div class="row block-1-4 block-tab-1-2 block-mob-full stats">
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            <div class="col-block stats__col ">
+                <div class="stats__count">
+                    128
+                </div>
+                <h4>Awards Received</h4>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">
+                    1500
+                </div>
+                <h4>Cups of Coffee</h4>
+            </div>
+            <div class="col-block stats__col stats__col--highlight">
+                <div class="stats__upsign">
+                    <a href="#"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+                </div>
+                <div class="stats__count">
+                    10
+                </div>
+                <h4>Projects Completed</h4>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">
+                    10
+                </div>
+                <h4>Happy Clients</h4> 
+            </div>
+
+        </div>
+    </section> <!-- end s-stats -->
+             
+<!-- s-stats
+    ================================================== -->
+    <section id="contact" class="s-contact target-section">
+
+        <div class="overlay"></div>
+
+        <div class="row narrow section-intro">
+            <div class="col-full">
+                <h3>Contact</h3>
+                <h1>Say Hello.</h1>
+                
+                <p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
+            </div>
+        </div>
+
+        <div class="row contact__main">
+            <div class="col-eight tab-full contact__form">
+                <form name="contactForm" id="contactForm" method="post" action="">
+                    <fieldset>
+    
+                    <div class="form-field">
+                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Submit</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    </fieldset>
+                </form>
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div> 
+            
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+                        
+            </div>
+            <div class="col-four tab-full contact__infos">
+                <h4 class="h06">Phone</h4>
+                <p>Phone: (+63) 555 1212<br>
+                Mobile: (+63) 555 0100<br>
+                Fax: (+63) 555 0101
+                </p>
+
+                <h4 class="h06">Email</h4>
+                <p>someone@holawebsite.com<br>
+                info@holawebsite.com
+                </p>
+
+                <h4 class="h06">Address</h4>
+                <p>
+                1600 Amphitheatre Parkway<br>
+                Mountain View, CA<br>
+                94043 US
+                </p>
+            </div>
+
+        </div>
+
+    </section> <!-- end s-contact -->
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+        <div class="row">
+            <div class="col-full">
+
+                <div class="footer-logo">
+                    <a class="footer-site-logo" href="#0"><img src="{% static 'images/logo.svg' %}" alt="Homepage"></a>
+                </div>
+
+                <ul class="footer-social">
+                    <li>
+                <a href="https://www.facebook.com/djangoengineer"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/Ihackthings"><i class="im im-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/alexandrv2/"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/himanshu-patel-8a21959/"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+                </li>
+                <li>
+                    <a href="https://www.github.com/thdesignable/"><i class="im im-github" aria-hidden="true"></i><span>Github</span></a>
+                </li>
+                </ul>
+                    
+            </div>
+        </div>
+
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>&copy; Copyright Pythonist {% now "Y" %}</span> 
+                </div>
+
+                <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- end photoSwipe background -->
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
 </body>
+
 </html>
