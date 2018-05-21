@@ -105,7 +105,7 @@
 
                 <h2>{{ blog.title }}</h2>
 
-                <p>{% autoescape off %}{{ blog.body }}{% endautoescape %}</p>
+                <p>{{ blog.body | safe}}</p>
 
               
                 <p class="blog-content__tags">
