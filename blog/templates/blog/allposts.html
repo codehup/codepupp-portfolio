@@ -98,13 +98,13 @@
                             <a href="blog-single.html">{{ blog.pub_date_hooman }}</a>
                         </div>  
                         
-                        <h2 class="h01"><a href="blog-single.html">{{ blog.title }}</a></h2>
+                        <h2 class="h01"><a href="{% url 'detail' blog.id %}">{{ blog.title }}</a></h2>
                         <p>
                         {{ blog.summary }}
                         </p>
 
                         <div class="blog-cat">
-                            <a href="blog.html">{{ blog.meta }}</a>
+                            <a href="#">{{ blog.meta }}</a>
                         </div>
 
                     </article>
