@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'ckeditor',
     'ckeditor_uploader',
+    'disqus',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +157,6 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
     },
 }
+
+DISQUS_API_KEY = 'r32jmMSF8j7L3pc1JuNi3RLXHs3kTa6wCzeGocL0uCEFPKm3Ozb1ovefXzjrIj8x'
+DISQUS_WEBSITE_SHORTNAME = 'CodeRecipies'
