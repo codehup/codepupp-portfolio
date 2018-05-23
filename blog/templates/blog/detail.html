@@ -48,11 +48,11 @@
 
       <nav class="header-nav-wrap">
           <ul class="header-nav">
-              <li class="current"><a class="smoothscroll"  href="//#home" title="home">Home</a></li>
-              <li><a class="smoothscroll"  href="#about" title="//#about">About</a></li>
-              <li><a class="smoothscroll"  href="#works" title="//#works">Works</a></li>
-              <li><a class="smoothscroll"  href="#blog" title="//#blog">Blog</a></li>
-              <li><a class="smoothscroll"  href="#contact" title="// #contact">Contact</a></li>
+              <li class="current"><a class="smoothscroll"  href="{% url 'home' %}" title="home">Home</a></li>
+              <li><a class="smoothscroll" href="{% url 'home'%}#about" title="about">About</a></li>
+              <li><a class="smoothscroll" href="{% url 'home'%}#works" title="works">Works</a></li>
+              <li><a class="smoothscroll" href="{% url 'home'%}#blog" title="blog">Blog</a></li>
+              <li><a class="smoothscroll" href="{% url 'home'%}#contact" title="contact">Contact</a></li>
           </ul>
       </nav>
 
@@ -120,7 +120,7 @@
                         <div class="blog-content__next">
                             <a href="#0" rel="next">
                                 <span></span>
-                                Less Is More 
+                                
                             </a>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                 <div class="col-full">
     
                     <div class="footer-logo">
-                        <a class="footer-site-logo" href="#0"><img src="{% static 'images/logo.svg' %}" alt="Homepage"></a>
+                        <a class="footer-site-logo" href="/"><img src="{% static 'images/logo.svg' %}" alt="Homepage"></a>
                     </div>
     
                     <ul class="footer-social">
@@ -205,7 +205,7 @@
             </div> <!-- end footer-bottom -->
     
         </footer> <!-- end footer -->
-    
+        
     
         <div id="preloader"> 
             <div id="loader"></div>

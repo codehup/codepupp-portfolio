@@ -103,6 +103,8 @@
 
         var toggleButton = $('.header-menu-toggle'),
             nav = $('.header-nav-wrap');
+            if (nav.length) {
+            var .header-menu-toggle = nav.offset().top;
 
         toggleButton.on('click', function(event){
             event.preventDefault();
