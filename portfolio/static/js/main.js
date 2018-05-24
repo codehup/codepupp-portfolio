@@ -103,8 +103,6 @@
 
         var toggleButton = $('.header-menu-toggle'),
             nav = $('.header-nav-wrap');
-            if (nav.length) {
-            var .header-menu-toggle = nav.offset().top;
 
         toggleButton.on('click', function(event){
             event.preventDefault();
@@ -302,12 +300,19 @@
     var ssSmoothScroll = function() {
 
         $('.smoothscroll').on('click', function (e) {
-            var target = this.hash,
-            $target    = $(target);
-        
+            if (this.hash !== "" && this.pathname == window.location.pathname) {
+            var target = this.hash;
+            // $target    = $(target);
+            
+
             e.preventDefault();
             e.stopPropagation();
-
+            
+                var topOffset = 0; //#top should default to 0 so no need to calculate the difference between top and top :)
+                    if (target != "#top") { //If the target is not "#top", then calculate topOffset 
+                    var topOffset = $(target).offset().top;
+                    }
+            }
             $('html, body').stop().animate({
                 'scrollTop': $target.offset().top
             }, cfg.scrollDuration, 'swing', function () {
