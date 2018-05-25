@@ -314,7 +314,7 @@
                     }
             }
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
+                'scrollTop': $(target).offset().top
             }, cfg.scrollDuration, 'swing', function () {
                 window.location.hash = target;
             });
