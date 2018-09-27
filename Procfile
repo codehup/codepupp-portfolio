@@ -1,0 +1,1 @@
+web: gunicorn codepupp-portfolio.wsgi --log-file -
